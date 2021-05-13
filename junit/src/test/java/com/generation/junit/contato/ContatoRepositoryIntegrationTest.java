@@ -32,6 +32,12 @@ public class ContatoRepositoryIntegrationTest {
 	}
 	
 	@Test (expected = RuntimeException.class)
+	public void salvarComTelNulo() throws Exception {
+		contato.setTelefone(null);
+		contatoRepository.save(contato);
+	}
+	
+	@Test (expected = RuntimeException.class)
 	public void salvarComNomeNulo() throws Exception {
 		contato.setNome(null);
 		contatoRepository.save(contato);
